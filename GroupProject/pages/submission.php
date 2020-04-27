@@ -109,6 +109,25 @@
 
         echo "<p>Added '" . $user . "'  to User database</p>";
       }
+
+      //new food/FoodBeverage
+      if(isset($_POST['food_beverage_submit'])){
+        $item_name = $_POST["item_name"];
+        $addFoodBev= $pdo->prepare('INSERT INTO FoodBeverage (item_name, serving_size, calories) VALUES (?, ?, ?);');
+        $addFoodBev->execute(array($_POST["item_name"], $_POST["serving_size"], $_POST["calories"]));
+
+        echo "<p>Added '" . $item_name . "'  to FoodBeverage database</p>";
+      }
+
+      //new nutrient
+      if(isset($_POST['nutritional_info_submit'])){
+        $nutrient_name = $_POST["nutrient_name"];
+        $item_name = $_POST["item_name"];
+        $addNutrient= $pdo->prepare('INSERT INTO NutritionalInfo (nutrient_name, item_name, nutrient_amount) VALUES (?, ?, ?);');
+        $addNutrient->execute(array($_POST["nutrient_name"], $_POST["item_name"], $_POST["nutrient_amount"]));
+
+        echo "<p>Added '" . $nutrient_name . " contained in " . $item_name . "'  to NutritionalInfo database</p>";
+      }
     }
     ?>
 
