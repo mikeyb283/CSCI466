@@ -1,3 +1,4 @@
 <?php
-  $password = '1991Oct29';
+  $username = 'z1758575';
+  $password = '1987Aug18';
  ?>
