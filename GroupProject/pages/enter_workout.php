@@ -13,7 +13,7 @@
   include('user_info.php');
   $connected = false;
   try { // if something goes wrong, an exception is thrown
-    $dsn = "mysql:host=courses;dbname=z1758575";
+    $dsn = "mysql:host=courses;dbname=z1799041";
     $pdo = new PDO($dsn, $username, $password);
     $connected = true;
   }
